@@ -102,6 +102,14 @@ var (
 		Function: NetworkFunctionAppRsp,
 		Command:  0x3d,
 	}
+	OperationGetSystemBootOptionsReq = Operation{
+		Function: NetworkFunctionChassisReq,
+		Command:  0x09,
+	}
+	OperationGetSystemBootOptionsRsp = Operation{
+		Function: NetworkFunctionChassisRsp,
+		Command:  0x09,
+	}
 
 	// operationLayerTypes tells us which layer comes next given a network
 	// function and command. It should never be modified during runtime, as
@@ -116,6 +124,7 @@ var (
 		OperationGetSDRRsp:                               LayerTypeGetSDRRsp,
 		OperationGetSensorReadingRsp:                     LayerTypeGetSensorReadingRsp,
 		OperationGetSessionInfoRsp:                       LayerTypeGetSessionInfoRsp,
+		OperationGetSystemBootOptionsRsp:                 LayerTypeGetSystemBootOptionsRsp,
 	}
 )
 
