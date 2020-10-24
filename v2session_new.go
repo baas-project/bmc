@@ -8,7 +8,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/gebn/bmc/pkg/ipmi"
+	"github.com/baas-project/bmc/pkg/ipmi"
 
 	"github.com/google/gopacket"
 )

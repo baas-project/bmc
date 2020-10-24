@@ -3,8 +3,8 @@ package bmc
 import (
 	"testing"
 
-	"github.com/gebn/bmc/pkg/iana"
-	"github.com/gebn/bmc/pkg/ipmi"
+	"github.com/baas-project/bmc/pkg/iana"
+	"github.com/baas-project/bmc/pkg/ipmi"
 )
 
 func TestFirmwareVersion(t *testing.T) {

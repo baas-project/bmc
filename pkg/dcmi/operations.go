@@ -1,7 +1,7 @@
 package dcmi
 
 import (
-	"github.com/gebn/bmc/pkg/ipmi"
+	"github.com/baas-project/bmc/pkg/ipmi"
 )
 
 var (

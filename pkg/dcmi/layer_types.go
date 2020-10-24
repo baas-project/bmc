@@ -1,7 +1,7 @@
 package dcmi
 
 import (
-	"github.com/gebn/bmc/pkg/layerexts"
+	"github.com/baas-project/bmc/pkg/layerexts"
 
 	"github.com/google/gopacket"
 )

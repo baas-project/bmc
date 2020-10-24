@@ -3,7 +3,7 @@ package bmc
 import (
 	"context"
 
-	"github.com/gebn/bmc/pkg/ipmi"
+	"github.com/baas-project/bmc/pkg/ipmi"
 )
 
 // SessionCommands contains high-level wrappers for sending commands within an

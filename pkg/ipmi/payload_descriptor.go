@@ -3,7 +3,7 @@ package ipmi
 import (
 	"fmt"
 
-	"github.com/gebn/bmc/pkg/iana"
+	"github.com/baas-project/bmc/pkg/iana"
 
 	"github.com/google/gopacket"
 )
