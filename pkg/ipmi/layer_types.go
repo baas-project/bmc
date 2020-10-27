@@ -239,4 +239,10 @@ var (
 			}),
 		},
 	)
+	LayerTypeSetSystemBootOptionsReq = gopacket.RegisterLayerType(
+		1029,
+		gopacket.LayerTypeMetadata{
+			Name: "Set System Boot Options Request",
+		},
+	)
 )

@@ -283,6 +283,29 @@ func (s *V2Session) GetSensorReading(ctx context.Context, sensor uint8) (*ipmi.G
 	return &cmd.Rsp, nil
 }
 
+func (s *V2Session) GetSystemBootOptions(ctx context.Context, req *ipmi.GetSystemBootOptionsReq) (*ipmi.GetSystemBootOptionsRsp, error) {
+	cmd := &ipmi.GetSystemBootOptionsCmd{
+		Req: *req,
+	}
+
+	if err := ValidateResponse(s.SendCommand(ctx, cmd)); err != nil {
+		return nil, err
+	}
+
+	return &cmd.Rsp, nil
+}
+
+func (s *V2Session) SetSystemBootOptions(ctx context.Context, req *ipmi.SetSystemBootOptionsReq) error {
+	cmd := &ipmi.SetSystemBootOptionsCmd{
+		Req: *req,
+	}
+
+	if err := ValidateResponse(s.SendCommand(ctx, cmd)); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (s *V2Session) closeSession(ctx context.Context) error {
 	// we decrement regardless of whether this command succeeds, as to not do so
 	// would be overly pessimistic - if it fails, there's nothing we can do;

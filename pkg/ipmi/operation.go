@@ -110,6 +110,10 @@ var (
 		Function: NetworkFunctionChassisRsp,
 		Command:  0x09,
 	}
+	OperationSetSystemBootOptionsRsp = Operation{
+		Function: NetworkFunctionChassisReq,
+		Command:  0x08,
+	}
 
 	// operationLayerTypes tells us which layer comes next given a network
 	// function and command. It should never be modified during runtime, as
