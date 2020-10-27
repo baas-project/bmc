@@ -1,7 +1,7 @@
 package ipmi
 
 import (
-	"github.com/gebn/bmc/pkg/layerexts"
+	"github.com/baas-project/bmc/pkg/layerexts"
 
 	"github.com/google/gopacket"
 )
@@ -222,6 +222,27 @@ var (
 			Decoder: layerexts.BuildDecoder(func() layerexts.LayerDecodingLayer {
 				return &GetSessionInfoRsp{}
 			}),
+		},
+	)
+	LayerTypeGetSystemBootOptionsReq = gopacket.RegisterLayerType(
+		1027,
+		gopacket.LayerTypeMetadata{
+			Name: "Get System Boot Options Request",
+		},
+	)
+	LayerTypeGetSystemBootOptionsRsp = gopacket.RegisterLayerType(
+		1028,
+		gopacket.LayerTypeMetadata{
+			Name: "Get System Boot Options Response",
+			Decoder: layerexts.BuildDecoder(func() layerexts.LayerDecodingLayer {
+				return &GetSystemBootOptionsRsp{}
+			}),
+		},
+	)
+	LayerTypeSetSystemBootOptionsReq = gopacket.RegisterLayerType(
+		1029,
+		gopacket.LayerTypeMetadata{
+			Name: "Set System Boot Options Request",
 		},
 	)
 )

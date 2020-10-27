@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/gebn/bmc/internal/pkg/transport"
-	"github.com/gebn/bmc/pkg/ipmi"
+	"github.com/baas-project/bmc/internal/pkg/transport"
+	"github.com/baas-project/bmc/pkg/ipmi"
 
 	"github.com/google/gopacket"
 )

@@ -3,7 +3,7 @@ package dcmi
 import (
 	"context"
 
-	"github.com/gebn/bmc"
+	"github.com/baas-project/bmc"
 )
 
 type sessionCommander struct {

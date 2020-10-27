@@ -7,8 +7,8 @@ import (
 	"hash"
 	"time"
 
-	"github.com/gebn/bmc/pkg/ipmi"
-	"github.com/gebn/bmc/pkg/layerexts"
+	"github.com/baas-project/bmc/pkg/ipmi"
+	"github.com/baas-project/bmc/pkg/layerexts"
 
 	"github.com/cenkalti/backoff/v4"
 	"github.com/google/gopacket"
@@ -281,6 +281,29 @@ func (s *V2Session) GetSensorReading(ctx context.Context, sensor uint8) (*ipmi.G
 		return nil, err
 	}
 	return &cmd.Rsp, nil
+}
+
+func (s *V2Session) GetSystemBootOptions(ctx context.Context, req *ipmi.GetSystemBootOptionsReq) (*ipmi.GetSystemBootOptionsRsp, error) {
+	cmd := &ipmi.GetSystemBootOptionsCmd{
+		Req: *req,
+	}
+
+	if err := ValidateResponse(s.SendCommand(ctx, cmd)); err != nil {
+		return nil, err
+	}
+
+	return &cmd.Rsp, nil
+}
+
+func (s *V2Session) SetSystemBootOptions(ctx context.Context, req *ipmi.SetSystemBootOptionsReq) error {
+	cmd := &ipmi.SetSystemBootOptionsCmd{
+		Req: *req,
+	}
+
+	if err := ValidateResponse(s.SendCommand(ctx, cmd)); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *V2Session) closeSession(ctx context.Context) error {

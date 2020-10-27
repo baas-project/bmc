@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"hash"
 
-	"github.com/gebn/bmc/pkg/ipmi"
+	"github.com/baas-project/bmc/pkg/ipmi"
 )
 
 // algorithmHasher creates a Hash from the provided IPMI V2.0 algorithm, to be

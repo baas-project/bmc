@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/gebn/bmc/internal/pkg/transport"
-	"github.com/gebn/bmc/pkg/ipmi"
-	"github.com/gebn/bmc/pkg/layerexts"
+	"github.com/baas-project/bmc/internal/pkg/transport"
+	"github.com/baas-project/bmc/pkg/ipmi"
+	"github.com/baas-project/bmc/pkg/layerexts"
 
 	"github.com/cenkalti/backoff/v4"
 	"github.com/google/gopacket"

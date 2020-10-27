@@ -3,7 +3,7 @@ package ipmi
 import (
 	"fmt"
 
-	"github.com/gebn/bmc/pkg/iana"
+	"github.com/baas-project/bmc/pkg/iana"
 
 	"github.com/google/gopacket"
 )
@@ -102,6 +102,18 @@ var (
 		Function: NetworkFunctionAppRsp,
 		Command:  0x3d,
 	}
+	OperationGetSystemBootOptionsReq = Operation{
+		Function: NetworkFunctionChassisReq,
+		Command:  0x09,
+	}
+	OperationGetSystemBootOptionsRsp = Operation{
+		Function: NetworkFunctionChassisRsp,
+		Command:  0x09,
+	}
+	OperationSetSystemBootOptionsRsp = Operation{
+		Function: NetworkFunctionChassisReq,
+		Command:  0x08,
+	}
 
 	// operationLayerTypes tells us which layer comes next given a network
 	// function and command. It should never be modified during runtime, as
@@ -116,6 +128,7 @@ var (
 		OperationGetSDRRsp:                               LayerTypeGetSDRRsp,
 		OperationGetSensorReadingRsp:                     LayerTypeGetSensorReadingRsp,
 		OperationGetSessionInfoRsp:                       LayerTypeGetSessionInfoRsp,
+		OperationGetSystemBootOptionsRsp:                 LayerTypeGetSystemBootOptionsRsp,
 	}
 )
 

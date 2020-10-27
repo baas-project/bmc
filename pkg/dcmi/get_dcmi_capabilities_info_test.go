@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gebn/bmc/pkg/ipmi"
+	"github.com/baas-project/bmc/pkg/ipmi"
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/gopacket"
